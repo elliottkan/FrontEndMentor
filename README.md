@@ -6,7 +6,7 @@ This repository is a collection of all my solutions I submitted at [frontendment
 
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | -- |  -- | --  |  -- |
-| HTML--CSS      |  Stats preview card component | [Live](https://stats-preview-card-component-mp.netlify.app/) | [Code](https://git.io/Js28z) |Free|
+| HTML--CSS      |  Stats preview card component | [Live](NA) | [Code](NA) |Free|
 
 
 ### Junior
