@@ -13,4 +13,4 @@ This repository is a collection of all my solutions I submitted at [frontendment
 
 | Tags  | Challanges | Live|  Code|  Type| 
 | --- | -- |  -- | --  |  -- |
-| HTML--CSS--JS      | Interactive card details form | [Live] (NA) | [Code](NA) |Free|
+| HTML--CSS--JS      | Interactive card details form | [Live] (NA) | [Code] (NA) |Free|
