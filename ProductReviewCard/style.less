@@ -1,3 +1,11 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,102 +26,275 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
 
-// font-family: 'Fraunces', serif;
-// font-family: 'Montserrat', sans-serif;
-// ** STYLING START //
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+/* Set core body defaults */
 body {
-	line-height: 1;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
-ol, ul {
-	list-style: none;
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
-blockquote, q {
-	quotes: none;
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.00ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.00ms !important;
+    scroll-behavior: auto !important;
+  }
 }
+
 
 // font-family: 'Fraunces', serif;
 // font-family: 'Montserrat', sans-serif;
 // ** STYLING START //
 
 :root{
-	  --primaryDark: #FFBA19;
-	  --primaryLight: #ffd675;
-	  --secondaryDark: #805d0d;
-      --secondaryMedium: yellow;
-      --secondaryWhite: blue;
-	  --bodyText: #1a1a1a;
-      --backgroundColour: orange;
+	  --PriceButton: hsl(158, 36%, 37%); //Olive for Price & Resting Button
+	  --focusButton: hsl(157, 43%, 18%); //Dark-Olive-Focus
+	  --bodyBackground: hsl(30, 38%, 92%);
+	  --headerColour: hsl(212, 21%, 14%);
+      --pColour: hsl(228, 12%, 48%);
+      --cardBackground: hsl(0, 0%, 100%);
+	 
 }
 
-@media screen and (min-width: 0px){
-    html{
-    background-color: blue;
-    color: yellow;
-    }
+html {
+	box-sizing: border-box;
+  }
+  
+body {
+	background-color: var(--bodyBackground);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+  }
+
+//** --------------- CARD LAYOUT ---------------------------
+//** --------------- CARD LAYOUT ---------------------------
+//** --------------- CARD LAYOUT ---------------------------
+
+.container {
+	background-color: var(--cardBackground);
+	border-radius: 1.3em;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	overflow: hidden;
+	max-width: 36em;
+	-webkit-box-shadow: 6px 6px 16px -2px rgba(166,166,166,0.5); 
+	box-shadow: 6px 6px 16px -2px rgba(166,166,166,0.5);
+
+  }
+
+.product-section {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+	padding: 1.5em;
 }
 
-@media screen and (min-width: 375px){
-    html{
-    background-color: yellow;
-    color: aqua;
+.picture-section {
+	max-width: 100%;
+	overflow: hidden;
+
+	img {
+		transition: 0.5s all ease-in-out;
+	}
+
+	img:hover {
+		transform: scale(1.1);
+	}
 }
+	
+
+.mobile-photo {
+	display: none;
+}
+
+//Apply Font to Relevant Fields
+
+.big-header, span.new-price {
+	font-family: 'Fraunces', serif;
+	font-weight: 700;
+}
+
+.small-header, .product-description, .old-price{
+	font-family: 'Montserrat', sans-serif;
+	color: var(--pColour);
+}
+
+
+.small-header {
+	letter-spacing: 0.4em;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+.big-header {
+	color: var(--headerColour);
+	font-size: 2.2em;
+	line-height: 1.0em;
+	padding-bottom: 0.6em;
+
+}
+
+//For spacing between texts
+h1, h2, p, .prices {
+	padding-bottom: 1.2em;
+	
+}
+
+.product-description {
+	font-size: 0.9em;
+}
+
+//To put line-through price in middle
+.prices {
+	display: flex;
+	align-items: center;
+}
+.new-price {
+	color: var(--PriceButton);
+	font-size: 2.0em;
+}
+
+.old-price {
+	text-decoration: line-through;
+	font-size: 0.9em;
+	padding-left: 1.5em;
+}
+
+//Styling of Button
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3em;
+	width: 100%;
+	border-radius: 0.5em;
+	border: 0;
+	background-color: var(--PriceButton);
+	color: var(--bodyBackground);
+	font-family: 'Montserrat', sans-serif;
+	transition: all 0.3s ease-in-out;
+
+	img {
+		padding-right: 1em;
+	}
+}
+
+button:hover {
+	background-color: var(--focusButton);
+	cursor: pointer;
+}
+
+//Coded By Elliott Kan Cool graphics
+footer {
+	padding-top: 1em;
+	font-family: 'Montserrat', sans-serif;
+	color: var(--headerColour);
+	text-transform: capitalize;
+	
+	a {
+		text-decoration: none;
+		position: relative;
+		color: var(--headerColour)
+	}
+
+	a:visited { 
+		text-decoration: none;
+		color: var(--headerColour);
+	}
+	a::before {
+		content: '';
+		background-color: hsla(158, 36%, 37%, 0.5);
+		position: absolute;
+		left: 0;
+		bottom: 0.1em;
+		width: 100%;
+		height: 0.4em;
+		z-index: -1;
+	  }
+	
+	  a:hover::before {
+		bottom: 0;
+		height: 100%;
+	  }
+
+	  a::before {
+		content: '';
+		background-color: hsla(158, 36%, 37%, 0.5);
+		position: absolute;
+		left: 0;
+		bottom: 0.1em;
+		width: 100%;
+		height: 0.4em;
+		z-index: -1;
+		transition: all .2s ease-in-out;
+	  }
+}
+
+
+
+
+//** --------------- MOBILE LAYOUT---------------------------
+//** --------------- MOBILE LAYOUT---------------------------
+//** --------------- MOBILE LAYOUT---------------------------
+
+@media screen and (max-width: 37.5em){
+	.container {
+		grid-template-columns: repeat(1, 1fr);
+		margin: 1.5em 1.5em;
+
+	.desktop-photo {
+		display: none;
+	}
+	.mobile-photo {
+		display: flex;
+  		min-width: 100%;
+  		object-fit: cover;
+	}
+}
+//Removing Padding from Footer for Mobile
+	footer {
+		padding-top: 0em;
+	}
 }
