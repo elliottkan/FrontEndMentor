@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://github.com/elliottkan/FrontEndMentor/tree/main/ProductReviewCard)
+- Live Site URL: [Live](https://product-preview-card-elliott.netlify.app)
 
 ## My process
 
@@ -57,7 +57,7 @@ I had tried to approach this by breaking down each component of the card. I visu
 
 - Setup the project with PX instead of EM. Using EM is for best practice according to the internet.
 
-I decided to add some nice hover effects to the <a href> and a cool zoom effect to the img (of course disabled for mobile).
+I decided to add some nice hover effects to the `<a href>` and a cool zoom effect to the img (of course disabled for mobile).
 
 ### Continued development
 
@@ -75,7 +75,7 @@ I hope to think a bit more hollistically about how to approach my projects with 
 
 ### Useful resources
 
-- [CSS Link Hover Effects](https://css-tricks.com/css-link-hover-effects/) - This helped me create my custom <a href> effects - was quite useful as there's a codepen in here to play around with the CSS.
+- [CSS Link Hover Effects](https://css-tricks.com/css-link-hover-effects/) - This helped me create my custom `<a href>` effects - was quite useful as there's a codepen in here to play around with the CSS.
 - [srcset and sizes attributes](https://youtu.be/2QYpkrX2N48) - Around 26:40 Timestamp where Kevin talks about users resizing screens.
 
 
